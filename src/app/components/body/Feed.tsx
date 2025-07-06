@@ -114,7 +114,9 @@ export default function Feed() {
       ))}
 
       {!loading && posts.length === 0 && (
-        <p className="text-center text-gray-500">No posts yet.</p>
+        <p className="text-center text-gray-500 mt-20">
+          No posts yet. Start sharing your thoughts...
+        </p>
       )}
     </div>
   );

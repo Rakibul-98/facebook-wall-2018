@@ -3,6 +3,7 @@
 
 import { useState } from "react";
 import { supabase } from "../../lib/supabase";
+import { toast } from "sonner";
 
 export default function Header() {
   const [activeTab, setActiveTab] = useState("Wall");
@@ -16,7 +17,7 @@ export default function Header() {
     e.preventDefault();
 
     if (!text.trim()) {
-      alert("Post cannot be empty!");
+      toast.warning("Post cannot be empty!");
       return;
     }
 
@@ -49,12 +50,12 @@ export default function Header() {
         throw new Error(`Post save failed: ${insertError.message}`);
       }
 
-      console.log("Post successfully saved to Supabase!");
+      toast.success("Post created successfully!");
       setText("");
       setImage(null);
     } catch (err: any) {
       console.error("Error:", err.message);
-      alert(err.message);
+      toast.error(err.message);
     } finally {
       setLoading(false);
     }
@@ -111,11 +112,11 @@ export default function Header() {
           <button
             type="submit"
             className={`bg-blue-600 text-white px-3 py-1 text-xs ${
-              loading
+              loading || !text.trim()
                 ? "opacity-50 cursor-not-allowed"
                 : "hover:bg-blue-700 cursor-pointer"
             }`}
-            disabled={loading}
+            disabled={loading || !text.trim()}
           >
             {loading ? "Posting..." : "Share"}
           </button>
