@@ -89,6 +89,12 @@ export default function Header() {
           rows={3}
           value={text}
           onChange={(e) => setText(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key === "Enter" && !e.shiftKey) {
+              e.preventDefault();
+              handleSubmit(e as unknown as React.FormEvent);
+            }
+          }}
           disabled={loading}
         />
 
