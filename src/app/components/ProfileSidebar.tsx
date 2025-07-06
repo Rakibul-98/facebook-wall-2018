@@ -3,14 +3,14 @@ import Link from "next/link";
 
 export default function ProfileSidebar() {
   return (
-    <aside className="w-64 p-4 text-sm font-sans space-y-4">
-      <div>
+    <aside className="w-64 text-sm font-sans space-y-4">
+      <div className="w-full">
         <Image
           src="/profile.png"
           alt="Mark"
-          width={200}
-          height={180}
-          className="border border-gray-300"
+          width={240}
+          height={240}
+          className="border border-gray-300 w-full object-cover"
         />
       </div>
 

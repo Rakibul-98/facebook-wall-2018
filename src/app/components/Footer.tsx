@@ -11,7 +11,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="border-t border-gray-300 bg-gray-100 text-xs text-gray-600 font-sans mt-8">
+    <footer className="border-t border-gray-300 bg-gray-100 text-xs text-gray-600 font-sans">
       <div className="max-w-5xl mx-auto px-4 py-3 flex flex-wrap justify-center space-x-4">
         {footerLinks.map((link, index) => (
           <a key={index} href="#" className="hover:underline">
