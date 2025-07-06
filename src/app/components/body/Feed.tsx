@@ -85,7 +85,7 @@ export default function Feed() {
   }
 
   return (
-    <div className="space-y-4 w-full p-4">
+    <div className="space-y-4 w-full py-4 md:py-4 md:p-4">
       {loading && <p className="text-center text-gray-500">Loading...</p>}
 
       {posts.map((post) => (
@@ -106,7 +106,7 @@ export default function Feed() {
                 alt="Post"
                 width={150}
                 height={150}
-                className="rounded bg-gray-50"
+                className="rounded bg-gray-50 border-2"
               />
             </div>
           )}

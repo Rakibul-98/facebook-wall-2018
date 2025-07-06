@@ -27,7 +27,7 @@ export default function Advertise() {
   ];
 
   return (
-    <div className="text-xs w-64 font-sans text-gray-700 space-y-4">
+    <div className="text-xs w-64 font-sans text-gray-700 space-y-4 hidden md:block">
       <div className="text-gray-500 text-[11px] mb-1">Advertise</div>
 
       {ads.map((ad) => (
@@ -41,7 +41,7 @@ export default function Advertise() {
               src={ad.image}
               alt={ad.title}
               fill
-              className="object-cover"
+              className="object-cover bg-gray-100"
             />
           </div>
 

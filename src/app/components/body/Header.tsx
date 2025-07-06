@@ -62,8 +62,8 @@ export default function Header() {
   };
 
   return (
-    <div className="px-4 w-full space-y-4">
-      <div className="flex space-x-4 text-sm font-sans">
+    <div className="md:px-4 w-full space-y-4">
+      <div className="flex sm:space-x-4  text-sm font-sans">
         {tabs.map((tab) => (
           <button
             key={tab}

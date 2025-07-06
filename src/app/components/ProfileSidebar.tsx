@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function ProfileSidebar() {
   return (
-    <aside className="w-64 text-sm font-sans space-y-4">
+    <aside className="hidden sm:block w-64 text-sm font-sans space-y-4">
       <div className="w-full">
         <Image
           src="/profile.png"
