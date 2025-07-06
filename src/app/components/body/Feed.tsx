@@ -18,6 +18,22 @@ export default function Feed() {
 
   useEffect(() => {
     fetchPosts();
+
+    const subscription = supabase
+      .channel("posts-changes")
+      .on(
+        "postgres_changes",
+        { event: "INSERT", schema: "public", table: "posts" },
+        (payload) => {
+          const newPost = payload.new as Post;
+          setPosts((prevPosts) => [newPost, ...prevPosts]);
+        }
+      )
+      .subscribe();
+
+    return () => {
+      supabase.removeChannel(subscription);
+    };
   }, []);
 
   const fetchPosts = async () => {
