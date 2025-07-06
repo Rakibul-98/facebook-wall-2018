@@ -97,7 +97,9 @@ export default function Feed() {
             </span>
           </div>
 
-          <p className="mb-2 text-gray-800 text-sm">{post.text}</p>
+          <p className="mb-2 text-gray-800 text-sm whitespace-pre-wrap">
+            {post.text}
+          </p>
 
           {post.image_url && (
             <div className="mb-2">
